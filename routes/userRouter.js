@@ -6,7 +6,7 @@ import { authorizePermissions } from "../middleware/authMiddleware.js";
 import { validateUpdateUserInput, validateUpdatePasswordInput } from "../middleware/validationMiddleware.js";
 
 
-router.route("/").get(getUser).patch(validateUpdateUserInput, updateUser).delete(deleteUser);
+router.route("/").get(getUser)
 router.route("/reset-password").patch(validateUpdatePasswordInput, resetPassword);
 router.route("/admin").get(authorizePermissions, applicationStats);
 router.route("/update-weights").patch(updateWeights);
