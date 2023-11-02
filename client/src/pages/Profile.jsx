@@ -22,6 +22,7 @@ export const loader = async () => {
     console.log(user);
     return { user, quote, author };
   } catch (error) {
+    console.log(error)
     toast.error(error.response.data.msg);
     return error;
   }

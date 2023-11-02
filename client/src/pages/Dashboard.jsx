@@ -25,7 +25,6 @@ export const loader = async () => {
   }
 };
 
-export const useDashboardContext = () => useContext(dashboardContext);
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -72,4 +71,5 @@ const Dashboard = () => {
   );
 };
 
+export const useDashboardContext = () => useContext(dashboardContext);
 export default Dashboard;
