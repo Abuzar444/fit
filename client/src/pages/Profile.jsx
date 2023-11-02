@@ -42,7 +42,7 @@ export const action = async ({ request }) => {
       errorList.forEach((error) => toast.error(error));
       return err;
     }
-    toast.error("Something went wrong. Please try again.");
+    toast.error(err.msg);
     return err;
   }
 };
