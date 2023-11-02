@@ -19,10 +19,9 @@ export const loader = async () => {
     const {
       data: { user, quote, author },
     } = await customFetch.get("/user");
-    console.log(user);
     return { user, quote, author };
   } catch (error) {
-    console.log(error)
+    console.log(error.response.data.msg)
     toast.error(error.response.data.msg);
     return error;
   }
