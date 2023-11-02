@@ -37,8 +37,6 @@ app.get('*', (req, res) => {
 app.use("*", (req, res) => res.status(404).json({ error: "not found" }));
 app.use(errorHandlerMiddleware);
 
-
-
 try {
   mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
