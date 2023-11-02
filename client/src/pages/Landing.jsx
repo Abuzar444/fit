@@ -1,4 +1,4 @@
-import React from "react";
+
 import Wrapper from "../assets/wrappers/LandingPage";
 import logo from "../assets/images/favicon.ico";
 import main from "../assets/images/main.svg";

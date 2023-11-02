@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+
 import Wrapper from "../assets/wrappers/DashboardFormPage";
 import {
   Form,
@@ -10,7 +10,7 @@ import {
 import FormRow from "../components/FormRow";
 import { toast } from "react-toastify";
 import { customFetch } from "../utils/util";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Modal from "../components/Modal";
 import Loader from "../components/Loader";
 
@@ -22,7 +22,7 @@ export const loader = async () => {
     console.log(user);
     return { user, quote, author };
   } catch (error) {
-    toast.error(error.msg);
+    toast.error(error.response.data.msg);
     return error;
   }
 };
@@ -43,6 +43,7 @@ export const action = async ({ request }) => {
       return err;
     }
     toast.error(err.msg);
+    console.log(err.msg)
     return err;
   }
 };
