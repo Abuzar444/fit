@@ -34,9 +34,9 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, './public', 'index.html'));
 })
 
+app.use("*", (req, res) => res.status(404).json({ error: "not found" }));
 app.use(errorHandlerMiddleware);
 
-app.use("*", (req, res) => res.status(404).json({ error: "not found" }));
 
 
 try {
