@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         loader: dashboardLoader,
         children: [
           {
-            index: true,
+            path: 'profile',
             element: <Profile />,
             loader: profileLoader,
             action: profileAction,
@@ -77,6 +77,7 @@ const router = createBrowserRouter([
             loader: allExercisesLoader,
           },
           {
+            index: true,
             path: "add-exercise",
             element: <AddExercise />,
             action: addExerciseAction,
