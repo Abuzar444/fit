@@ -40,7 +40,7 @@ export const deleteUser = async (req, res) => {
   await Exercise.deleteMany({ createdBy: userId });
 
 
-  res.cookie("token", "", { expires: new Date(0) });
+  // res.cookie("token", "", { expires: new Date(0) });
   res.status(StatusCodes.OK).json({ msg: 'User deleted successfully' });
 }
 
