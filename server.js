@@ -2,6 +2,7 @@ import 'express-async-errors'
 import * as dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
+const app = express();
 import mongoose from 'mongoose';
 import morgan from 'morgan';
 import authRouter from './routes/authRouter.js';
@@ -14,12 +15,11 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import path from 'path';
 
-const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.use(express.static(path.resolve(__dirname, './client/dist')));
-app.use(express.json());
 app.use(cookieParser());
+app.use(express.json());
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
